@@ -18,7 +18,9 @@ class RegisterController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/inscription', name: 'register')]
+    /**
+     * @Route("/inscription", name="register")
+     */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $user = new User();
