@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="La boutique qui vend uniquement du made in France">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
+    <meta name="description" content="Le magasin qui vend uniquement du couscous fait a base de produits locaux">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="icon" type="image/png" href="../fondLogo.png"/>
     <title>{% block title %}CousBeldi{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
@@ -36,7 +37,9 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top " id="barre_principal">
         <div class="container-fluid">
-            <a class="navbar-brand" id="barre" href="{{ path('home') }}">CousBeldi</a>
+            <a class="navbar-brand" id="barre" href="{{ path('home') }}">
+                CousBeldi
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,9 +82,9 @@
 
                 <div class="container">
                     <div class="carousel-caption text-start">
-                        <h1>Example headline.</h1>
-                        <p>Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                        <h1>Bienvenue chez CousBeldi.</h1>
+                        <p>Le couscous 100% fait maison avec des produits locaux, frais et de saison.</p>
+                        <p><a class="btn btn-lg btn-warning" href="#">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -90,9 +93,9 @@
 
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        <h1>Livraison à domicile.</h1>
+                        <p>Faites-vous livrer chez vous avec un service personnaliser.</p>
+                        <p><a class="btn btn-lg btn-warning" href="#">Commander maintenant</a></p>
                     </div>
                 </div>
             </div>
@@ -101,9 +104,9 @@
 
                 <div class="container">
                     <div class="carousel-caption text-end">
-                        <h1>One more for good measure.</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        <h1>L'offre du jour.</h1>
+                        <p>Couscous vitaminé à l'Agneau.</p>
+                        <p><a class="btn btn-lg btn-warning" href="#">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -133,13 +136,48 @@
 
 
     <!-- FOOTER -->
-    <footer class="footer-custom">
-        <p>
-            &copy; 2020–2021 CousBeldi. <br/>
-            <small>100% made in France <br/>
-                <a href="#">Privacy</a> &middot; <a href="#">Terms</a></small>
-        </p>
-    </footer>
+    <div class="mon-footer">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Livraison</li>
+                            <li>Emporter</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Nous contacter</h3>
+                        <ul>
+                            <li>Mail : contact.cousbeldi69@gmail.com</li>
+                            <li>Tél : 06 51 10 90 28</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Méthode de paiement</h3>
+                        <ul>
+                            <li>Espèce</li>
+                            <li>CB - VISA</li>
+                            <li>CB - MasterCard</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Chez CousBeldi</h3>
+                        <p>Derrière chaque belle chose se trouve une histoire et à travers ces quelques lignes, j'aimerais vous raconter la mienne afin de rendre ce que l'on m'a donnée</p>
+                    </div>
+                </div>
+                <div class="row item social d-flex align-items-center" id="id_social_media">
+                    <a href="https://www.facebook.com/cousbeldi"><i class="icon ion-social-facebook"></i></a>
+                    <a href="https://www.instagram.com/cousbeldi/"><i class="icon ion-social-instagram"></i></a>
+                </div>
+                <h4 class="copyright">CousBeldi © 2021</h4>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <!---------------------------- FIN FOOTER -------------------------->
 </main>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
