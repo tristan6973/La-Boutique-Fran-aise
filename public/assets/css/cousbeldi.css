@@ -53,6 +53,12 @@ body{
     font-size: 19px;
 }
 
+.cart-icon{
+    color: black;
+    height: 20px;
+    padding-left: 20px;
+}
+
 /*  --------------------------------------------- Code CSS du footer ------------------------------------------------ */
 .mon-footer {
     padding:50px 0;
