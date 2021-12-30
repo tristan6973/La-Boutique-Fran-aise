@@ -43,6 +43,7 @@ security:
                 # checkbox in the login form (see below), uncomment the
                 # following line to always enable it.
                 #always_remember_me: true
+                samesite: 'strict'
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
