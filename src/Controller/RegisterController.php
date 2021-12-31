@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Classe\Mail;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,25 +24,38 @@ class RegisterController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
+        $notification = null;
         $user = new User();
         $form = $this ->createForm(RegisterType::class, $user);
 
         $form -> handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-
             $user = $form->getData();
 
-            $password = $encoder->encodePassword($user,$user->getPassword());
+            $search_email = $this->entityManager->getRepository(User::class)->findOneByEmail($user->getEmail());
 
-            $user->setPassword($password);
+            if (!$search_email){
+                $password = $encoder->encodePassword($user,$user->getPassword());
+                $user->setPassword($password);
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
 
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+                $mail = new Mail();
+                $content = "Bonjour ".$user->getFirstname()."<br/>Bienvenue sur la première page de Cousbeldi Hasni.<br><br/>";
+
+                $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue sur Cousbeldi', $content);
+
+                $notification = "Votre compte a bien été créé.";
+            }else{
+                $notification = 'Un compte est associé à cette adresse mail.';
+            }
+            //return $this->redirectToRoute('app_login');
         }
 
         return $this->render('register/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'notification' => $notification
         ]);
     }
 }

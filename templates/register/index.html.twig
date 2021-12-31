@@ -2,7 +2,13 @@
 
 {% block content %}
     <h1>Inscription</h1>
-
+    {% if notification %}
+        <div class="alert alert-info">
+            {{ notification }}
+            <a href="{{ path('app_login') }}">Cliquez ici</a> pour vous connecter.
+        </div>
+        <hr/>
+    {% endif %}
 
     {{ form_start(form) }}
     <div class="row">
@@ -10,7 +16,7 @@
         <div class="col-md-6">{{ form_row(form.lastname) }}</div>
         <div class="col-md-12">{{ form_row(form.email) }}</div>
         <div class="col-md-12">{{ form_row(form.password) }}</div>
-
     </div>
     {{ form_end(form) }}
+
 {% endblock %}
