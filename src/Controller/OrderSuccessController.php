@@ -24,7 +24,7 @@ class OrderSuccessController extends AbstractController
     public function index(Cart $cart, $stripeSessionId)
     {
         $order = $this->entityManager->getRepository(Order::class)->findOneByStripeSessionId($stripeSessionId);
-
+        //dd($order);
         if (!$order || $order->getUser() != $this->getUser()) {
             return $this->redirectToRoute('home');
         }
@@ -34,7 +34,7 @@ class OrderSuccessController extends AbstractController
             $cart->remove();
 
             // Modifier le statut isPaid de notre commande en mettant 1
-            $order->setIsPaid(1);
+            $order->setState(1);
             $this->entityManager->flush();
 
             // Envoyer un email à notre client pour lui confirmer sa commande

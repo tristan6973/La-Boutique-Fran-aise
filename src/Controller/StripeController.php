@@ -29,6 +29,7 @@ class StripeController extends AbstractController
         if (!$order) {
             new JsonResponse(['error' => 'order']);
         }
+        //La variable prix renvoie la somme total des achats
         $prix = 0;
         $i = 0;
         foreach ($order->getOrderDetails()->getValues() as $product) {
@@ -45,11 +46,11 @@ class StripeController extends AbstractController
                 'quantity' => $product->getQuantity(),
             ];
             $prix = $prix + $products_for_stripe[$i]["price_data"]["unit_amount"] * $products_for_stripe[$i]["quantity"];
-            $i = $i + 1;
+            $i++;
         }
 
         //Pour faire la livraison offerte
-        if (($prix / 100) < 60){
+        if (($prix / 100) < 60){ //Si le prix de la commande est inférieur à 60€ alors j'ajoute la livraison
             $products_for_stripe[] = [
                 'price_data' => [
                     'currency' => 'eur',
@@ -79,8 +80,10 @@ class StripeController extends AbstractController
         ]);
 
         $order->setStripeSessionId($checkout_session->id);
+
         $entityManager->flush();
 
-        return new JsonResponse(['id' => $checkout_session->id]);
+        $response = new JsonResponse(['id' => $checkout_session->id]);
+        return $response;
     }
 }

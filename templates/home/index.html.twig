@@ -3,52 +3,16 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
+    <div style="text-align: center">
+        <h3>Nos meilleures ventes.</h3>
+        <p>Découvrez les produits les plus vendus.</p>
+    </div>
     <div class="row">
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-    <br/>
-    <div class="row">
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            <h2>Couscous</h2>
-            <p>Couscous fait à base de produits locaux et bio.<br/> 100% made in France.</p>
-            <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        {% for product in products %}
+            <div class="col-md-3">
+                {% include 'product/single_product.html.twig' %}
+            </div>
+        {% endfor %}
     </div><!-- /.row -->
 
     <!-- START THE FEATURETTES -->

@@ -9,11 +9,11 @@ use App\Form\OrderType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class OrderController extends AbstractController
 {
+
     private $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
@@ -21,13 +21,13 @@ class OrderController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-
     /**
      * @Route("/commande", name="order")
      */
-    public function index(Cart $cart, Request $request): Response
+    public function index(Cart $cart, Request $request)
     {
-        if (!$this->getUser()->getAddresses()->getValues()){
+        if (!$this->getUser()->getAddresses()->getValues())
+        {
             return $this->redirectToRoute('account_address_add');
         }
 
@@ -77,7 +77,7 @@ class OrderController extends AbstractController
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
             $order->setDelivery($delivery_content);
-            $order->setIsPaid(0);
+            $order->setState(0);
 
             $this->entityManager->persist($order);
 
