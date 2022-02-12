@@ -42,7 +42,7 @@ class RegisterController extends AbstractController
                 $this->entityManager->flush();
 
                 $mail = new Mail();
-                $content = "Bonjour ".$user->getFirstname()."<br/>Bienvenue sur la première page de Cousbeldi Hasni.<br><br/>";
+                $content = "Bonjour ".$user->getFirstname()."<br/>Bienvenue sur la première page de Cousbeldi.<br><br/>";
 
                 $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue sur Cousbeldi', $content);
 

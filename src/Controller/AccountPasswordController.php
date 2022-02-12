@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AccountPasswordController extends AbstractController
 {
     private EntityManagerInterface $entityManager;
+
     public function __construct(EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
     }
