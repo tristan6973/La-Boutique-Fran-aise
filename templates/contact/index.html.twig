@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - Cousbeldi{% endblock %}
+
+{% block content %}
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-warning">{{ message }}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-8">{{ form(form) }}</div>
+        <div class="col-md-4">
+            <strong>CousBeldi</strong>
+            <hr>
+            06 51 10 90 28<br/>
+            27 Cours Tolstoï, 69100 Villeurbanne.<br/>
+            contact.cousbeldi69@gmail.com<br/>
+        </div>
+    </div>
+
+{% endblock %}
