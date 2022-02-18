@@ -37,37 +37,44 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md fixed-top" id="barre_principal">
+    <nav class="navbar navbar-expand-md navbar-custom fixed-top" id="barre_principal">
         <div class="container-fluid">
-            <a class="navbar-brand" id="barre" href="{{ path('home') }}">
+            <a class="navbar-brand" href="{{ path('home') }}" style="color: #A14000;">
                 <img src="{{ asset('assets/img/fondLogo.png') }}" height="40px">
                 <span>CousBeldi</span>
             </a>
+            <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" id="barre" aria-current="page" href="{{ path('products') }}">Nos produits</a>
+                        <a class="nav-link active barre" aria-current="page" href="{{ path('products') }}">Nos produits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="barre" aria-current="page" href="{{ path('founder') }}">La fondatrice</a>
+                        <a class="nav-link active barre" aria-current="page" href="{{ path('founder') }}">La fondatrice</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="barre" aria-current="page" href="{{ path('contact') }}">Contact</a>
+                        <a class="nav-link active barre" aria-current="page" href="{{ path('contact') }}">Contact</a>
                     </li>
                 </ul>
                 <div class="navbar-item-custom">
                     {% if app.user %}
-                        <a href="{{ path('account') }}" id="barre" class="btn action-button register-button">Mon compte</a>
-                        <a href="{{ path('app_logout') }}" id="barre">Déconnexion</a>
+                        <a href="{{ path('account') }}" class="btn action-button register-button" style="color: #A14000">Mon compte</a>
+                        <a href="{{ path('app_logout') }}" style="color: #A14000">Déconnexion</a>
                     {% else %}
-                        <a href="{{ path('app_login') }}" class="login" id="barre">Connexion</a>
-                        <a class="btn action-button register-button" href="{{ path('register') }}" id="barre">Inscription</a></div>
+                        <a href="{{ path('app_login') }}" class="login barre" style="color: #A14000">Connexion</a>
+                        <a class="btn action-button register-button" href="{{ path('register') }}" >Inscription</a>
                     {% endif %}
+
+
                 </div>
-                <a href="{{ path('cart') }}" style="text-decoration: none; color: #000000" >
-                    <img src="{{ asset('assets/img/shopping-cart.png') }}" class="cart-icon" alt="Mon panier">
-                    Mon panier
-                </a>
+                <div>
+                    <a href="{{ path('cart') }}" style="text-decoration: none; color: #A14000" >
+                        <img src="{{ asset('assets/img/shopping-cart.png') }}" class="cart-icon" alt="Mon panier">
+                        Mon panier
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -137,7 +144,7 @@
                     <div class="col">
                         <h3>Nous contacter</h3>
                         <ul>
-                            <li>Mail : contact.cousbeldi69@gmail.com</li>
+                            <li>contact.cousbeldi69@gmail.com</li>
                             <li>Tél : 06 51 10 90 28</li>
                         </ul>
                     </div>
@@ -157,7 +164,7 @@
                 <div class="row item social d-flex align-items-center" id="id_social_media">
                     <a href="https://www.facebook.com/cousbeldi"><i class="icon ion-social-facebook"></i></a>
                     <a href="https://www.instagram.com/cousbeldi/"><i class="icon ion-social-instagram"></i></a>
-                    <a href="https://twitter.com/cousbeldi/"><img src="{{ asset('assets/img/twitter.png') }}" style="height: 20px;width: 20px"></a>
+                    <a href="https://twitter.com/cousbeldi/"><img src="{{ asset('assets/img/logo_twitter.jpg') }}" style="height: 24px;width: 24px;margin-left: -5px;"></a>
                 </div>
                 <h4 class="copyright">CousBeldi © 2021</h4>
             </div>

@@ -42,9 +42,17 @@
 #barre_principal{
     background-color:#fbf0d2;
 }
-#barre{
+.barre{
     color: #A14000;
+    border-radius: 1em;
 }
+
+.barre:hover, .barre:focus, .barre:active{
+    background-color:rgb(228, 200, 160);
+    color: #FAF4F2;
+    border-radius: .75em;
+}
+
 body{
     background-color:#FAF4F2;
 }
@@ -54,20 +62,30 @@ body{
 }
 
 .cart-icon{
-    color: black;
+    color: burlywood;
     height: 20px;
-    padding-left: 20px;
+
 }
 
+@media (min-width:767px) {
+    .cart-icon {
+        padding-left: 20px;
+    }
+    .register-button{
+        background:rgb(228, 200, 160);
+        border-radius: 20px;
+    }
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='burlywood' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 
 .action-button:hover {
     background:burlywood;
 }
 
-.register-button{
-    background:rgb(228, 200, 160);
-    border-radius: 20px;
-}
+
 
 .block-small{
     max-width: 600px;
